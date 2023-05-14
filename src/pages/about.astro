@@ -1,5 +1,6 @@
 ---
 import Layout from '$layouts/Default.astro';
+import AboutPane from '$layouts/AboutPane.astro';
 ---
 
 <Layout title="About">
@@ -15,4 +16,18 @@ import Layout from '$layouts/Default.astro';
   <hr class="
     w-[90%]
   " />
+
+  <div class="
+    flex flex-col justify-start items-start
+    flex-grow w-[90%]
+    mt-4
+    space-y-4
+  ">
+    <AboutPane>
+      Panthios is an unofficial organization for building powerful
+      software. All good software should be fast, secure, and
+      convenient. We provide ratings for various third-party software
+      and services, as well as our own utilities.
+    </AboutPane>
+  </div>
 </Layout>

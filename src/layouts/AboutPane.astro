@@ -1,0 +1,22 @@
+---
+const { right } = Astro.props;
+---
+
+
+<div class={`
+  ${right ? 'flex-row-reverse' : 'flex-row'}
+  flex justify-start items-center
+  w-full
+  space-x-4
+`}>
+  <div class="
+    flex-none
+    w-[30%] h-32
+    bg-gray-500
+    rounded-2xl
+  " />
+
+  <span>
+    <slot />
+  </span>
+</div>
