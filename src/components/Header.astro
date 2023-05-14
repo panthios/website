@@ -1,6 +1,7 @@
 ---
 const LINKS = [
-  { name: 'About', url: '/about' }
+  { name: 'About', url: '/about' },
+  { name: 'Rating', url: '/rating' }
 ]
 ---
 
@@ -19,7 +20,7 @@ const LINKS = [
 
   <nav class="
     flex flex-row
-    space-x-4
+    space-x-8
   ">
     {
       LINKS.map(({ name, url }) => (
