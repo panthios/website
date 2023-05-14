@@ -1,0 +1,9 @@
+---
+const { words } = Astro.props;
+
+let word = words[Math.floor(Math.random() * words.length)];
+---
+
+<span>
+  {word}
+</span>

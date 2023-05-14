@@ -1,5 +1,14 @@
 ---
 import Layout from '../layouts/Default.astro';
+import WordSpin from '../components/WordSpin.astro';
+
+const WORDS = [
+	"Convenience",
+	"Security",
+	"Speed",
+	"Privacy",
+	"Reliability"
+];
 ---
 
 <Layout title="Home" y_centered>
@@ -9,6 +18,6 @@ import Layout from '../layouts/Default.astro';
 	<h2 class="
 		text-4xl font-bold text-center
 	">
-		Convenience is not luxurious
+		<WordSpin words={WORDS} /> is not luxurious
 	</h2>
 </Layout>
