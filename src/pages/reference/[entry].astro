@@ -1,0 +1,35 @@
+---
+import Layout from '$layouts/Default.astro';
+import { getEntryBySlug } from 'astro:content';
+
+const { entry } = Astro.params;
+
+const ref = await getEntryBySlug("reference", entry);
+const { Content } = await ref.render();
+---
+
+<Layout>
+  <div class="
+    w-full px-16
+    markdown-content
+  ">
+    <h2 class="
+      text-4xl font-bold
+      mb-4
+    ">
+      { ref.data.title }
+    </h2>
+
+    <Content />
+  </div>
+</Layout>
+
+<style is:global>
+  .markdown-content a {
+    color: #3182ce;
+  }
+
+  .markdown-content a:hover {
+    color: #2c5282;
+  }
+</style>

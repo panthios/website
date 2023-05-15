@@ -1,9 +1,12 @@
 ---
 import Layout from '$layouts/Default.astro';
+import { getCollection } from 'astro:content';
+
+const reference = await getCollection('reference');
 ---
 
 
-<Layout>
+<Layout title="Reference">
   <h2 class="
     text-4xl
     font-bold
@@ -11,4 +14,14 @@ import Layout from '$layouts/Default.astro';
   ">
     The Panthios Reference
   </h2>
+
+  <ul>
+    {reference.map(entry => (
+      <li>
+        <a href={`/reference/${entry.slug}`}>
+          {entry.data.title}
+        </a>
+      </li>
+    ))}
+  </ul>
 </Layout>
