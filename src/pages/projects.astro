@@ -1,5 +1,8 @@
 ---
 import Layout from "$layouts/Default.astro";
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('project');
 ---
 
 <Layout title="Projects">
@@ -10,4 +13,24 @@ import Layout from "$layouts/Default.astro";
   ">
     Projects
   </h1>
+
+  <div class="
+    grid grid-cols-2 gap-4
+    mt-6
+  ">
+    {projects.map(entry => (
+      <a href={`/project/${entry.slug}`}>
+        <span class="
+          flex flex-col justify-end items-center
+          p-4
+          w-48 h-48
+          bg-gray-700
+          rounded-3xl
+          text-xl
+        ">
+          {entry.data.name}
+        </span>
+      </a>
+    ))}
+  </div>
 </Layout>
